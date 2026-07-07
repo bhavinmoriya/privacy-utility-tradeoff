@@ -1,0 +1,29 @@
+[project]
+name = "privacy-utility-tradeoff"
+version = "0.1.0"
+description = "Benchmarking the statistical utility cost of differential privacy vs homomorphic encryption on the same ML task"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.9",
+    "numpy>=1.26",
+    "scikit-learn>=1.5",
+    "scipy>=1.13",
+    "plotly>=5.24",
+    "gradio>=5.0",
+    "tenseal>=0.3.16",
+    "pyarrow>=17.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/privacy_utility"]
